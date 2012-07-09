@@ -1,0 +1,8 @@
+#!/bin/sh
+
+for i in ${TEMPPATH}/*-tool-label ; do
+  echo
+  echo "### BEGIN $i ###"
+  cat "$i"
+  echo "### END $i ###"
+done

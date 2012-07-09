@@ -1,0 +1,16 @@
+#!/bin/sh
+
+cat << EOF
+
+menu separator
+
+label hd
+	menu label Boot the first hard disk
+	text help
+	Pass control back to the bootloader
+	on your first (or only) hard disk
+	endtext
+	localboot 0x80
+	append -
+	
+EOF

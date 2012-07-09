@@ -1,0 +1,12 @@
+#!/bin/sh
+
+cat << EOF
+menu title ${DISKNAME} - Version ${DISKVERSION} - Build `date`
+menu background lxfsplash.png
+
+MENU color title    1;3;44     #FFFFFF00 #00000000 std
+MENU color sel      7;37;40    #FF000000 #88C0C0C0 all
+MENU color unsel    37;44      #FFE0E0E0 #00000000 none
+MENU color tabmsg   1;31;40    #FFFFFF00 #00000000 std
+MENU color help     1;32;40    #FF30F030 #00000000 none
+EOF
