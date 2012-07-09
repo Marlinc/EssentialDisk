@@ -1,5 +1,7 @@
 DISKNAME    = EssentialDisk
 
+INCLUDEDTOOLS = plop memtest
+
 # Define the disk version
 VERSION     = 0
 PATCHLEVEL  = 1
@@ -18,7 +20,7 @@ all: build
 build-syslinux:
 	mkdir -p $(BUILDPATH)/isolinux
 	#cp -R $(SOURCEPATH)/isolinux/* $(BUILDPATH)/isolinux
-	$(MAKE) -f $(SOURCEPATH)/isolinux/Makefile SOURCEPATH=$(SOURCEPATH) BUILDPATH=$(BUILDPATH) DISKNAME=$(DISKNAME) DISKVERSION=$(DISKVERSION) TEMPPATH=$(TEMPPATH)
+	$(MAKE) -f $(SOURCEPATH)/isolinux/Makefile SOURCEPATH=$(SOURCEPATH) BUILDPATH=$(BUILDPATH) DISKNAME=$(DISKNAME) DISKVERSION=$(DISKVERSION) TEMPPATH=$(TEMPPATH) INCLUDEDTOOLS="$(INCLUDEDTOOLS)"
 
 build-tempdirectory:
 	mkdir -p $(TEMPPATH)
