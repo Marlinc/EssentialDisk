@@ -2,7 +2,6 @@
 
 cat << EOF
 menu title ${DISKNAME} - Version ${DISKVERSION} - Build `date`
-menu background lxfsplash.png
 
 MENU color title    1;3;44     #FFFFFF00 #00000000 std
 MENU color sel      7;37;40    #FF000000 #88C0C0C0 all

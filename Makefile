@@ -14,7 +14,6 @@ IMAGEFILE  = $(DISKNAME).iso
 
 
 all: build
-	echo None
     
 build-syslinux:
 	mkdir -p $(BUILDPATH)/isolinux
@@ -24,8 +23,12 @@ build-syslinux:
 build-tempdirectory:
 	mkdir -p $(TEMPPATH)
 	rm -Rf $(TEMPPATH)/*
+	
+build-autorun:
+	cp $(SOURCEPATH)/autorun $(BUILDPATH)/autorun
+	echo 'No documentation was included with this disk.' > $(BUILDPATH)/index.html	
 
-build: clean-build build-tempdirectory build-syslinux
+build: clean-build build-tempdirectory build-syslinux build-autorun
 	mkdir -p $(BUILDPATH)
 	cp -Ru $(SOURCEPATH)/raw-disk/* $(BUILDPATH)
 	mkisofs -o $(IMAGEFILE) \

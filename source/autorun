@@ -1,10 +1,4 @@
 #!/bin/sh
 
-# Bail out if booting a System Rescue CD image
-
-#check for SRCD release file or similar
- 
-grep -q 'initrd=initram.igz BOOT_IMAGE=' /proc/cmdline && exit
-
-[[ -n "$BROWSER" ]] && $BROWSER index.html || firefox index.html || mozilla-firefox index.html || mozilla index.html || chromium index.html || google-chrome index.html || konqueror index.html || opera index.html
+[[ -n "$BROWSER" ]] && $BROWSER index.html || xdg-open index.html || chromium index.html || google-chrome index.html || firefox index.html || mozilla-firefox index.html || mozilla index.html  || konqueror index.html || opera index.html
 
